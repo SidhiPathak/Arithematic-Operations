@@ -1,10 +1,14 @@
 from multiprocessing import Process
+import os
 
 def addition(numbers):
     result = 0
     for number in numbers:
         result+=int(number)
     print(f"sum of {number_list} is: ",result)
+    # To show the individual process IDs
+    print('parent process:', os.getppid())
+    print('process id:', os.getpid())
     return result
 
 def subtraction(numbers):
@@ -13,6 +17,9 @@ def subtraction(numbers):
         if i<(len(numbers)-1):
             result=result-int(numbers[i+1])
     print(f"Subration of {number_list} is: ",result)
+    # To show the individual process IDs
+    print('parent process:', os.getppid())
+    print('process id:', os.getpid())
     return result
 
 def multiplication(numbers):
@@ -21,6 +28,9 @@ def multiplication(numbers):
         if i<(len(numbers)-1):
             result=result*int(numbers[i+1])
     print(f"Multiplication of {number_list} is: ",result)
+    # To show the individual process IDs
+    print('parent process:', os.getppid())
+    print('process id:', os.getpid())
     return result
 
 def division(numbers):
@@ -29,6 +39,9 @@ def division(numbers):
         if i<(len(numbers)-1):
             result=result/float(numbers[i+1])
     print(f"Division of {number_list} is: ",result)
+    # To show the individual process IDs
+    print('parent process:', os.getppid())
+    print('process id:', os.getpid())
     return result
 
 print("Enter the number of digits you want to perform arithematic operations: ")
